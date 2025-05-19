@@ -13,7 +13,7 @@ body {
 }
 #i01 {
   position: absolute;
-  left: -50px;
+  left: 0px;
   top: 0;
   opacity: 0;
 }
