@@ -66,36 +66,36 @@ var animations = [
   ],
   [
     {
-      id: '#i06',
+      id: '#i07',
       duration: 550,
       delayBefore: 0,
       delayAfter: 0,
       easing: "easeOutCubic",
-      animations: {opacity:0, top:0, left:0, scale:[0.5,1]}
+      animations: {opacity:0, top:"5%", left:0}
+    },
+    {
+      id: '#i06',
+      duration: 550,
+      delayBefore: 100,
+      delayAfter: 0,
+      easing: "easeOutCubic",
+      animations: {opacity:0, top:"5%", left:0}
     },
     {
       id: '#i05',
       duration: 550,
-      delayBefore: 0,
+      delayBefore: 200,
       delayAfter: 0,
       easing: "easeOutCubic",
-      animations: {opacity:0, top:0, left:0, scale:[0.5,1]}
-    },
-    {
-      id: '#i07',
-      duration: 550,
-      delayBefore: 100,
-      delayAfter: 0,
-      easing: "easeOutCubic",
-      animations: {opacity:0, top:0, left:0, scale:[0.5,1]}
+      animations: {opacity:0, top:"5%", left:0}
     },
     {
       id: '#i04',
       duration: 550,
-      delayBefore: 100,
+      delayBefore: 300,
       delayAfter: 0,
       easing: "easeOutCubic",
-      animations: {opacity:0, top:0, left:0, scale:[0.5,1]}
+      animations: {opacity:0, top:"5%", left:0}
     },
     {
       id: '#i02',
