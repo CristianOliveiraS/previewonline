@@ -8,14 +8,14 @@ var animations = [
               duration: 250,
               delayBefore: 0,
               delayAfter: 0,
-              animations: {opacity:1}
+              animations: {opacity:1, scale:[1.25,1.25]}
             },
             {
               id: '#i01',
-              duration: 15050,
+              duration: 500,
               delayBefore: 0,
               delayAfter: 0,
-              animations: {scale:[1.25,1]}
+              animations: {scale:[1,1.25]}
             },
           ],
         ];
