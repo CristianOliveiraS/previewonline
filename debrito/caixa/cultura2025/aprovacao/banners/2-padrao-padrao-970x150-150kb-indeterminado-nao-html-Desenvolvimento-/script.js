@@ -2,166 +2,102 @@ var animations = [
   [                                                                                        
    {
      id: '#i01',
-     duration: 850,
+     duration: 200,
      delayBefore: 150,
      delayAfter: 0,
-     easing: "easeOutCubic",
+     easing: "easeOutBack",
      animations: {opacity:1, left:0, top:0,}
-  },              
+   },              
    {
      id: '#i02',
-     duration: 850,
-     delayBefore: 180,
+     duration: 200,
+     delayBefore: 250,
      delayAfter: 0,
-     easing: "easeOutCubic",
+     easing: "easeOutBack",
      animations: {opacity:1, left:0, top:0,}
-  },              
+   },              
    {
      id: '#i03',
-     duration: 850,
-     delayBefore: 210,
+     duration: 200,
+     delayBefore: 350,
      delayAfter: 0,
-     easing: "easeOutCubic",
+     easing: "easeOutBack",
      animations: {opacity:1, left:0, top:0,}
-  },              
+   },              
    {
      id: '#i04',
-     duration: 850,
-     delayBefore: 240,
+     duration: 200,
+     delayBefore: 450,
      delayAfter: 0,
-     easing: "easeOutCubic",
+     easing: "easeOutBack",
      animations: {opacity:1, left:0, top:0,}
-  },              
+   },              
    {
      id: '#i05',
-     duration: 550,
-     delayBefore: 525,
+     duration: 850,
+     delayBefore: 250,
      delayAfter: 0,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },              
+   },              
    {
      id: '#i06',
-     duration: 550,
-     delayBefore: 625,
+     duration: 850,
+     delayBefore: 250,
      delayAfter: 0,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },              
+   },              
    {
      id: '#i07',
-     duration: 550,
-     delayBefore: 655,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },              
-   {
-     id: '#i08',
-     duration: 550,
-     delayBefore: 685,
-     delayAfter: 3000,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },           
-  ],
-  [
-  {
-     id: '#i01',
-     duration: 450,
-     delayBefore: 0,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:"911px", top:0,}
-  },
-  {
-     id: '#i02',
-     duration: 450,
-     delayBefore: 30,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:"911px", top:0,}
-  },
-  {
-     id: '#i03',
-     duration: 450,
-     delayBefore: 60,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:"911px", top:0,}
-  },
-  {
-     id: '#i04',
-     duration: 450,
-     delayBefore: 90,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:"911px", top:0,}
-  },
-  {
-     id: '#i09',
-     duration: 150,
-     delayBefore: 150,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },
-  {
-     id: '#i04',
-     duration: 650,
+     duration: 850,
      delayBefore: 350,
      delayAfter: 0,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },
-  {
-     id: '#i03',
-     duration: 650,
-     delayBefore: 380,
+   },              
+   {
+     id: '#i08',
+     duration: 850,
+     delayBefore: 450,
+     delayAfter: 3000,
+     easing: "easeOutCubic",
+     animations: {opacity:1, left:0, top:0,}
+   },              
+  ],
+  [
+   {
+     id: '#i09',
+     duration: 850,
+     delayBefore: 450,
      delayAfter: 0,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },
-  {
-     id: '#i02',
-     duration: 650,
-     delayBefore: 410,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },
-  {
-     id: '#i01',
-     duration: 650,
-     delayBefore: 440,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },
-  {
+   },
+   {
      id: '#i10',
-     duration: 650,
-     delayBefore: 750,
+     duration: 850,
+     delayBefore: 650,
      delayAfter: 0,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },
-  {
+   },
+   {
      id: '#i11',
-     duration: 650,
-     delayBefore: 850,
+     duration: 850,
+     delayBefore: 1150,
      delayAfter: 0,
-     easing: "easeOutCubic",
+     easing: "easeOutBack",
      animations: {opacity:1, left:0, top:0,}
-  },
-  {
+   },
+   {
      id: '#i12',
-     duration: 650,
-     delayBefore: 950,
-     delayAfter: 4000,
+     duration: 850,
+     delayBefore: 850,
+     delayAfter: 3000,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },
+   },
   ],
 ]
  new WAnimation(animations, {

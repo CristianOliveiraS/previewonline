@@ -2,262 +2,264 @@ var animations = [
   [                                                                                        
    {
      id: '#i01',
+     duration: 600,
+     delayBefore: 150,
+     delayAfter: 0,
+     easing: "easeOutBack",
+     animations: {opacity:1, left:0, top:0,}
+   },              
+   {
+     id: '#i02',
+     duration: 600,
+     delayBefore: 150,
+     delayAfter: 0,
+     easing: "easeOutBack",
+     animations: {opacity:1, left:0, top:0,}
+   },              
+   {
+     id: '#i03',
+     duration: 600,
+     delayBefore: 150,
+     delayAfter: 0,
+     easing: "easeOutBack",
+     animations: {opacity:1, left:0, top:0,}
+   },              
+   {
+     id: '#i04',
+     duration: 600,
+     delayBefore: 150,
+     delayAfter: 0,
+     easing: "easeOutBack",
+     animations: {opacity:1, left:0, top:0,}
+   },              
+   {
+     id: '#i05',
+     duration: 600,
+     delayBefore: 150,
+     delayAfter: 0,
+     easing: "easeOutBack",
+     animations: {opacity:1, left:0, top:0,}
+   },              
+   {
+     id: '#i06',
+     duration: 600,
+     delayBefore: 150,
+     delayAfter: 0,
+     easing: "easeOutBack",
+     animations: {opacity:1, left:0, top:0,}
+   },              
+   {
+     id: '#i06-1',
+     duration: 600,
+     delayBefore: 150,
+     delayAfter: 0,
+     easing: "easeOutBack",
+     animations: {opacity:1, left:0, top:0,}
+   },              
+   {
+     id: '#i06-2',
+     duration: 600,
+     delayBefore: 150,
+     delayAfter: 0,
+     easing: "easeOutBack",
+     animations: {opacity:1, left:0, top:0,}
+   },              
+   {
+     id: '#i06-3',
+     duration: 600,
+     delayBefore: 150,
+     delayAfter: 0,
+     easing: "easeOutBack",
+     animations: {opacity:1, left:0, top:0,}
+   },              
+   {
+     id: '#i06-4',
+     duration: 600,
+     delayBefore: 150,
+     delayAfter: 0,
+     easing: "easeOutBack",
+     animations: {opacity:1, left:0, top:0,}
+   },              
+   {
+     id: '#i06-5',
+     duration: 600,
+     delayBefore: 150,
+     delayAfter: 0,
+     easing: "easeOutBack",
+     animations: {opacity:1, left:0, top:0,}
+   },              
+   {
+     id: '#i06-6',
+     duration: 600,
+     delayBefore: 150,
+     delayAfter: 0,
+     easing: "easeOutBack",
+     animations: {opacity:1, left:0, top:0,}
+   },              
+   {
+     id: '#i07',
      duration: 850,
+     delayBefore: 300,
+     delayAfter: 0,
+     easing: "easeOutCubic",
+     animations: {opacity:1, left:0, top:0,}
+   },              
+   {
+     id: '#i08',
+     duration: 850,
+     delayBefore: 300,
+     delayAfter: 0,
+     easing: "easeOutCubic",
+     animations: {opacity:1, left:0, top:0,}
+   },              
+   {
+     id: '#i09',
+     duration: 850,
+     delayBefore: 350,
+     delayAfter: 0,
+     easing: "easeOutCubic",
+     animations: {opacity:1, left:0, top:0,}
+   },              
+   {
+     id: '#i10',
+     duration: 850,
+     delayBefore: 400,
+     delayAfter: 3000,
+     easing: "easeOutCubic",
+     animations: {opacity:1, left:0, top:0,}
+   },       
+  ],
+  [
+   {
+     id: '#i11',
+     duration: 550,
      delayBefore: 150,
      delayAfter: 0,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },              
+   },
    {
-     id: '#i02',
-     duration: 850,
-     delayBefore: 180,
+     id: '#i12',
+     duration: 700,
+     delayBefore: 250,
      delayAfter: 0,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },              
+   },
    {
-     id: '#i03',
-     duration: 850,
-     delayBefore: 210,
+     id: '#i13',
+     duration: 700,
+     delayBefore: 250,
      delayAfter: 0,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },              
+   },
    {
-     id: '#i04',
-     duration: 850,
-     delayBefore: 240,
+     id: '#i14',
+     duration: 700,
+     delayBefore: 250,
      delayAfter: 0,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },              
+   },
    {
-     id: '#i04-1',
-     duration: 850,
-     delayBefore: 270,
+     id: '#i15',
+     duration: 700,
+     delayBefore: 250,
      delayAfter: 0,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },              
+   },
    {
-     id: '#i04-2',
-     duration: 850,
-     delayBefore: 300,
+     id: '#i16',
+     duration: 700,
+     delayBefore: 250,
      delayAfter: 0,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },              
+   },
    {
-     id: '#i04--1',
-     duration: 850,
-     delayBefore: 300,
+     id: '#i17',
+     duration: 700,
+     delayBefore: 250,
      delayAfter: 0,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },              
+   },
    {
-     id: '#i04--2',
-     duration: 850,
-     delayBefore: 330,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },              
-   {
-     id: '#i04--3',
-     duration: 850,
-     delayBefore: 360,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },              
-   {
-     id: '#i04--4',
-     duration: 850,
-     delayBefore: 390,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },              
-   {
-     id: '#i04--5',
-     duration: 850,
-     delayBefore: 420,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },              
-   {
-     id: '#i04--6',
-     duration: 850,
-     delayBefore: 450,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },              
-   {
-     id: '#i05',
-     duration: 550,
-     delayBefore: 525,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },              
-   {
-     id: '#i06',
-     duration: 550,
-     delayBefore: 625,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },              
-   {
-     id: '#i07',
-     duration: 550,
-     delayBefore: 655,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },              
-   {
-     id: '#i08',
-     duration: 550,
-     delayBefore: 685,
-     delayAfter: 3000,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },           
-  ],
-  [
-  {
-     id: '#i01',
-     duration: 450,
+     id: '#i18',
+     duration: 0,
      delayBefore: 0,
      delayAfter: 0,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },
-  {
-     id: '#i02',
-     duration: 450,
-     delayBefore: 30,
+   },
+   {
+     id: '#i19',
+     duration: 0,
+     delayBefore: 0,
      delayAfter: 0,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },
-  {
-     id: '#i03',
-     duration: 450,
-     delayBefore: 60,
+   },
+   {
+     id: '#i20',
+     duration: 0,
+     delayBefore: 0,
      delayAfter: 0,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },
-  {
-     id: '#i04',
-     duration: 450,
-     delayBefore: 90,
+   },
+  ],
+  [
+   {
+     id: '#i18',
+     duration: 850,
+     delayBefore: 550,
      delayAfter: 0,
      easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },
-  {
-     id: '#i04-1',
-     duration: 450,
-     delayBefore: 120,
+     animations: {opacity:0, left:0, top:0,}
+   },
+   {
+     id: '#i19',
+     duration: 850,
+     delayBefore: 650,
      delayAfter: 0,
      easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },
-  {
-     id: '#i04-2',
-     duration: 450,
-     delayBefore: 150,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },
-  {
-     id: '#i09',
-     duration: 150,
-     delayBefore: 150,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },
-  {
-     id: '#i04-2',
-     duration: 650,
-     delayBefore: 350,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:"-90px",}
-  },
-  {
-     id: '#i04-1',
-     duration: 650,
-     delayBefore: 350,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:"-90px",}
-  },
-  {
-     id: '#i04',
-     duration: 650,
-     delayBefore: 350,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:"-90px",}
-  },
-  {
-     id: '#i03',
-     duration: 650,
-     delayBefore: 380,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:"-90px",}
-  },
-  {
-     id: '#i02',
-     duration: 650,
-     delayBefore: 410,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:"-90px",}
-  },
-  {
-     id: '#i01',
-     duration: 650,
-     delayBefore: 440,
-     delayAfter: 0,
-     easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:"-90px",}
-  },
-  {
-     id: '#i10',
-     duration: 650,
+     animations: {opacity:0, left:0, top:0,}
+   },
+   {
+     id: '#i20',
+     duration: 850,
      delayBefore: 750,
      delayAfter: 0,
      easing: "easeOutCubic",
-     animations: {opacity:1, left:0, top:0,}
-  },
-  {
-     id: '#i11',
-     duration: 650,
-     delayBefore: 850,
+     animations: {opacity:0, left:0, top:0,}
+   },
+   {
+     id: '#i21',
+     duration: 850,
+     delayBefore: 350,
      delayAfter: 0,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },
-  {
-     id: '#i12',
-     duration: 650,
-     delayBefore: 750,
-     delayAfter: 4000,
+   },
+   {
+     id: '#i22',
+     duration: 850,
+     delayBefore: 450,
+     delayAfter: 0,
+     easing: "easeOutBack",
+     animations: {opacity:1, left:0, top:0,}
+   },
+   {
+     id: '#i23',
+     duration: 700,
+     delayBefore: 250,
+     delayAfter: 3000,
      easing: "easeOutCubic",
      animations: {opacity:1, left:0, top:0,}
-  },
+   },
   ],
 ]
  new WAnimation(animations, {
