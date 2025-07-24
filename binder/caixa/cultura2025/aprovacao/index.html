@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Banners HTML - Comprovante</title>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            font-family: arial, sans-serif
+        }
+
+        html {
+            background-color: #ececec
+        }
+
+        body {
+            display: block;
+            margin: 0 auto;
+            background-color: #fff;
+            min-height: 100vh
+        }
+
+        header {
+            background: rgb(0, 183, 255);
+            background: linear-gradient(90deg, rgb(0, 183, 255) 0%, rgb(1, 5, 255) 100%);
+            border-bottom: 3px solid rgb(0, 183, 255);
+            padding: 1.5em;
+        }
+
+        .header-in {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .header-in .logo {
+            flex: none;
+            background-image: url('https://logospreview.s3.us-east-2.amazonaws.com/lOGOPREVIEW.png');
+            height: 40px;
+            width: 160px
+        }
+
+        .header-info {
+            text-transform: uppercase
+        }
+
+        .header-info p {
+            display: inline;
+            margin: 0 1em;
+            color: white;
+            font-size: .75em
+        }
+
+        .header-info p:last-child {
+            margin: 0
+        }
+
+        .banner-info {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: block
+        }
+
+        .print-btn {
+            font-size: .7em;
+            text-transform: uppercase;
+            margin: 1.5em 0 1.5em auto;
+            width: 180px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end
+        }
+
+        .print-btn img {
+            margin-left: .5em
+        }
+
+        .banner-header,
+        .banner-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            background-color: #898989;
+            text-transform: uppercase;
+            color: white;
+            font-weight: bold;
+            font-size: .7em;
+            word-break: keep-all;
+            word-wrap: break-word
+        }
+
+        .banner-row {
+            background-color: #fff;
+            color: #404041;
+            text-transform: capitalize
+        }
+
+        .banner-row {
+            margin-top: 1em
+        }
+
+        .banner:nth-of-type(odd) .banner-row {
+            background-color: #f5f5f5
+        }
+
+        .banner-header>div:not(:last-child),
+        .banner-row>div:not(:last-child) {
+            padding: 1em 0;
+            flex: 0 0 91px
+        }
+
+        .banner-header>div:not(:last-child),
+        .banner-row>div:not(:last-child) {
+            margin-right: .5em
+        }
+
+        .banner-header>div:first-child,
+        .banner-row>div:first-child {
+            padding-left: 1em
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(1),
+        .banner-row>div:not(:last-child):nth-of-type(1) {
+            flex: 0 0 30px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(2),
+        .banner-row>div:not(:last-child):nth-of-type(2) {
+            flex: 0 0 120px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(3),
+        .banner-row>div:not(:last-child):nth-of-type(3) {
+            flex: 0 0 90px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(4),
+        .banner-row>div:not(:last-child):nth-of-type(4) {
+            flex: 0 0 90px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(5),
+        .banner-row>div:not(:last-child):nth-of-type(5) {
+            flex: 0 0 70px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(6),
+        .banner-row>div:not(:last-child):nth-of-type(6) {
+            flex: 0 0 40px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(7),
+        .banner-row>div:not(:last-child):nth-of-type(7) {
+            flex: 0 0 40px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(8),
+        .banner-row>div:not(:last-child):nth-of-type(8) {
+            flex: 0 0 90px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(9),
+        .banner-row>div:not(:last-child):nth-of-type(9) {
+            flex: 0 0 95px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(10),
+        .banner-row>div:not(:last-child):nth-of-type(10) {
+            flex: 0 0 100px
+        }
+
+        .last-header {
+            flex: 0 0 120px;
+            position: relative;
+            padding: 0;
+            text-transform: initial;
+            background-color: #c2c2c2;
+            font-weight: 400;
+            color: #4f4f4f;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer
+        }
+
+        .last-header:before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: -5px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 5px 6px 5px 0;
+            border-color: transparent #c2c2c2 transparent transparent
+        }
+
+        .last-header a {
+            margin: 0 auto
+        }
+
+        .banner-row .last-header a {
+            padding: 10px 20px
+        }
+
+        .icon-header {
+            width: 30px;
+            background-color: #d7d7d7;
+            align-self: stretch;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        iframe {
+            transition: .4s;
+            display: block
+        }
+
+        @media print {
+            .last-header {
+                opacity: 0
+            }
+
+            .header-in .logo {
+                width: 200px;
+                height: 75px;
+                -webkit-print-color-adjust: exact;
+                background-image: url('https://logospreview.s3.us-east-2.amazonaws.com/LogoAlternativa.png');
+                background-repeat: no-repeat;
+                background-size: contain
+            }
+
+            .header-in {
+                flex-direction: column
+            }
+
+            .header-in * {
+                color: black !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-in">
+            <div class="logo"></div>
+            
+        <div class="header-info">
+            <p><strong>Cliente:</strong> CAIXA</p>
+            <p><strong>Agência:</strong> DEBRITO</p>
+            <p><strong>Campanha:</strong> CULTURA 2025</p>
+            <p><strong>Data:</strong> 23/07/25</p>
+        </div>
+    
+        </div>
+    </header>
+    
+        <section class="banner-info">
+            <p class="print-btn" onclick="prints();"></p>
+            <section>
+                <div class="banner-header">
+                    <div>Item</div>
+                    <div>linha criativa</div>
+                    <div>veículo</div>
+                    <div>dimensão</div>
+                    <div>peso</div>
+                    <div>tempo</div>
+                    <div>looping</div>
+                    <div>complexidade</div>
+                    <div>tipo</div>
+                    <div id="showAll" class="last-header"><a>Ver todos</a>
+                        <div class="icon-header"><img src="https://iconspreview.s3.us-east-2.amazonaws.com/eye.png" alt="olho"></div>
+                    </div>
+                </div>
+                
+        <div class="banner">
+            <div class="banner-row">
+                <div>1</div>
+                <div>padrão</div>
+                <div>a definir</div>
+                <div>970x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>não</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>1</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/1-padrao-padrao-970x250-150kb-indeterminado-nao-html-Desenvolvimento-/index.html" width="970px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>2</div>
+                <div>padrão</div>
+                <div>a definir</div>
+                <div>970x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>não</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>2</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/2-padrao-padrao-970x150-150kb-indeterminado-nao-html-Desenvolvimento-/index.html" width="970px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>3</div>
+                <div>padrão</div>
+                <div>a definir</div>
+                <div>300x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>não</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>3</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/3-padrao-padrao-300x250-150kb-indeterminado-nao-html-Desenvolvimento-/index.html" width="300px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>4</div>
+                <div>padrão</div>
+                <div>a definir</div>
+                <div>300x600</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>não</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>4</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/4-padrao-padrao-320x600-150kb-indeterminado-nao-html-Desenvolvimento-/index.html" width="300px" height="600px" frameborder="0"></iframe>
+        </div>
+    
+            </section>
+        </section>
+    
+    <script type="application/javascript">
+        var btnShow = document.getElementById('showAll');
+        var iframes = document.getElementsByTagName('iframe');
+        var cacheStyle = [];
+        var isOpen;
+        var singleOpen;
+
+        var iconEye = 'https://iconspreview.s3.us-east-2.amazonaws.com/eye.png';
+
+        var iconRefresh = 'https://iconspreview.s3.us-east-2.amazonaws.com/refresh.png';
+
+        for (var x = 0; x < iframes.length; x++) {
+            var cacheProps = {
+                width: iframes[x].width,
+                height: iframes[x].height
+            };
+            console.log(iframes[x].width)
+            cacheStyle.push(cacheProps);
+        }
+
+
+        function toggleIframe(style) {
+            var btn = document.querySelectorAll('.banner-row > .last-header');
+            if (!isOpen) {
+                for (var x in style) {
+                    iframes[x].style.height = 0;
+                    btn[x].firstChild.innerText = 'Visualizar';
+                    btn[x].lastElementChild.firstElementChild.src = iconEye;
+                    singleOpen = false;
+                }
+                return isOpen = true;
+            }
+            if (isOpen) {
+                for (var x in style) {
+                    iframes[x].style.height = style[x].height;
+                    iframes[x].src = iframes[x].src;
+                }
+                return isOpen = false;
+            }
+        }
+
+        toggleIframe(cacheStyle);
+
+        btnShow.addEventListener('click', function () {
+            return toggleIframe(cacheStyle);
+        })
+
+        function viewBanner(elem) {
+            var buttons = document.querySelectorAll('.banner-row > .last-header');
+
+            for (var x in cacheStyle) {
+                iframes[x].style.height = 0;
+                buttons[x].firstChild.innerText = 'Visualizar';
+                buttons[x].lastElementChild.firstElementChild.src = iconEye;
+            }
+
+            if (!singleOpen) {
+                elem.parentElement.parentElement.nextElementSibling.src = elem.parentElement.parentElement.nextElementSibling.src;
+                elem.parentElement.parentElement.nextElementSibling.style.height = elem.parentElement.parentElement.nextElementSibling.height;
+                elem.innerText = 'Fechar';
+                elem.nextElementSibling.firstElementChild.src = iconRefresh;
+                return singleOpen = true;
+            } else {
+                elem.parentElement.parentElement.nextElementSibling.style.height = 0;
+                elem.firstChild.innerText = 'Visualizar';
+                elem.nextElementSibling.firstElementChild.src = iconEye;
+                return singleOpen = false;
+            }
+        }
+
+        function refreshBanner(elem) {
+            elem.parentElement.parentElement.nextElementSibling.src = elem.parentElement.parentElement.nextElementSibling.src;
+        }
+
+        function prints() {
+            var style = cacheStyle;
+            for (var x in style) {
+                iframes[x].style.height = style[x].height;
+                iframes[x].src = iframes[x].src;
+            }
+            setTimeout(window.print(), 2000);
+        }
+    </script>
+</body>
+
+</html>
