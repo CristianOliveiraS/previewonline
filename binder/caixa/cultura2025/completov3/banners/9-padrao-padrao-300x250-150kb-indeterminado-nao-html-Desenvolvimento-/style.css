@@ -1,0 +1,363 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#banner {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  overflow: hidden;
+  background: #e0e8ef;
+}
+
+#i01 {
+  position: absolute;
+  left: 0;
+  top: -200%;
+  opacity: 0;
+}
+#i02 {
+  position: absolute;
+  left: 0;
+  top: -200%;
+  opacity: 0;
+}
+#i03 {
+  position: absolute;
+  left: 0;
+  top: -200%;
+  opacity: 0;
+}
+#i04 {
+  position: absolute;
+  left: 0;
+  top: -200%;
+  opacity: 0;
+}
+#i05 {
+  position: absolute;
+  left: 0;
+  top: -200%;
+  opacity: 0;
+}
+#i06 {
+  position: absolute;
+  left: 0;
+  top: -200%;
+  opacity: 0;
+}
+#i07 {
+  position: absolute;
+  left: 0;
+  top: 200%;
+  opacity: 0;
+}
+#i08 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-3 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-4 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-5 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-6 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-7 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-8 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-9 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-10 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-11 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-12 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-13 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-14 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-15 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-16 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-17 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-18 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-19 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-20 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-21 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-22 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-23 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-24 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-25 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-26 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-27 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-28 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-29 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-30 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-31 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-32 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-33 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-34 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-35 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-36 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i08-37 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#i11 {
+  position: absolute;
+  left: 200%;
+  top: 0;
+  opacity: 0;
+}
+#i12 {
+  position: absolute;
+  left: 0;
+  top: -200%;
+  opacity: 0;
+}
+#i13 {
+  position: absolute;
+  left: 0;
+  top: -200%;
+  opacity: 0;
+}
+#i14 {
+  position: absolute;
+  left: 0;
+  top: -200%;
+  opacity: 0;
+}
+#i15 {
+  position: absolute;
+  left: 0;
+  top: -200%;
+  opacity: 0;
+}
+#i16 {
+  position: absolute;
+  left: 0;
+  top: -200%;
+  opacity: 0;
+}
+#i17 {
+  position: absolute;
+  left: 0;
+  top: -200%;
+  opacity: 0;
+}
+
+#i18 {
+  position: absolute;
+  left: -30%;
+  top: 0;
+  opacity: 0;
+}
+#i19 {
+  position: absolute;
+  left: -30%;
+  top: 0;
+  opacity: 0;
+}
+#i20 {
+  position: absolute;
+  left: -30%;
+  top: 0;
+  opacity: 0;
+}
+#i21 {
+  position: absolute;
+  left: 30%;
+  top: 0;
+  opacity: 0;
+}
+#i22 {
+  position: absolute;
+  left: 30%;
+  top: 0;
+  opacity: 0;
+}
+#i23 {
+  position: absolute;
+  left: 0;
+  top: 30%;
+  opacity: 0;
+}
