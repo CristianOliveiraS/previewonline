@@ -8,7 +8,7 @@ var animations = [
               duration: 250,
               delayBefore: 0,
               delayAfter: 0,
-              animations: {opacity:1}
+              animations: {opacity:1,scale:[1.25,1.25]}
             },
             {
               id: '#i01',
@@ -46,7 +46,7 @@ var animations = [
       delayBefore: 550,
       delayAfter: 0,
       easing: "easeOutCubic",
-      animations: {opacity:1, scale:[1.1]}
+      animations: {opacity:1, scale:[1.06]}
     },
     {
       id: '#i03',
@@ -70,7 +70,7 @@ var animations = [
       delayBefore: 650,
       delayAfter: 0,
       easing: "easeOutCubic",
-      animations: {opacity:1, scale:[1.1]}
+      animations: {opacity:1, scale:[1.06]}
     },
     {
       id: '#i04',
@@ -94,7 +94,7 @@ var animations = [
       delayBefore: 750,
       delayAfter: 0,
       easing: "easeOutCubic",
-      animations: {opacity:1, scale:[1.1]}
+      animations: {opacity:1, scale:[1.06]}
     },
     {
       id: '#i05',
