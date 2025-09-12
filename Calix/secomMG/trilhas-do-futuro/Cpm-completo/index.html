@@ -1,0 +1,3231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Banners HTML - Comprovante</title>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            font-family: arial, sans-serif
+        }
+
+        html {
+            background-color: #ececec
+        }
+
+        body {
+            display: block;
+            margin: 0 auto;
+            background-color: #fff;
+            min-height: 100vh
+        }
+
+        header {
+            background: rgb(0, 183, 255);
+            background: linear-gradient(90deg, rgb(0, 183, 255) 0%, rgb(1, 5, 255) 100%);
+            border-bottom: 3px solid rgb(0, 183, 255);
+            padding: 1.5em;
+        }
+
+        .header-in {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .header-in .logo {
+            flex: none;
+            background-image: url('https://logospreview.s3.us-east-2.amazonaws.com/lOGOPREVIEW.png');
+            height: 40px;
+            width: 160px
+        }
+
+        .header-info {
+            text-transform: uppercase
+        }
+
+        .header-info p {
+            display: inline;
+            margin: 0 1em;
+            color: white;
+            font-size: .75em
+        }
+
+        .header-info p:last-child {
+            margin: 0
+        }
+
+        .banner-info {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: block
+        }
+
+        .print-btn {
+            font-size: .7em;
+            text-transform: uppercase;
+            margin: 1.5em 0 1.5em auto;
+            width: 180px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end
+        }
+
+        .print-btn img {
+            margin-left: .5em
+        }
+
+        .banner-header,
+        .banner-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            background-color: #898989;
+            text-transform: uppercase;
+            color: white;
+            font-weight: bold;
+            font-size: .7em;
+            word-break: keep-all;
+            word-wrap: break-word
+        }
+
+        .banner-row {
+            background-color: #fff;
+            color: #404041;
+            text-transform: capitalize
+        }
+
+        .banner-row {
+            margin-top: 1em
+        }
+
+        .banner:nth-of-type(odd) .banner-row {
+            background-color: #f5f5f5
+        }
+
+        .banner-header>div:not(:last-child),
+        .banner-row>div:not(:last-child) {
+            padding: 1em 0;
+            flex: 0 0 91px
+        }
+
+        .banner-header>div:not(:last-child),
+        .banner-row>div:not(:last-child) {
+            margin-right: .5em
+        }
+
+        .banner-header>div:first-child,
+        .banner-row>div:first-child {
+            padding-left: 1em
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(1),
+        .banner-row>div:not(:last-child):nth-of-type(1) {
+            flex: 0 0 30px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(2),
+        .banner-row>div:not(:last-child):nth-of-type(2) {
+            flex: 0 0 120px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(3),
+        .banner-row>div:not(:last-child):nth-of-type(3) {
+            flex: 0 0 90px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(4),
+        .banner-row>div:not(:last-child):nth-of-type(4) {
+            flex: 0 0 90px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(5),
+        .banner-row>div:not(:last-child):nth-of-type(5) {
+            flex: 0 0 70px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(6),
+        .banner-row>div:not(:last-child):nth-of-type(6) {
+            flex: 0 0 40px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(7),
+        .banner-row>div:not(:last-child):nth-of-type(7) {
+            flex: 0 0 40px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(8),
+        .banner-row>div:not(:last-child):nth-of-type(8) {
+            flex: 0 0 90px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(9),
+        .banner-row>div:not(:last-child):nth-of-type(9) {
+            flex: 0 0 95px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(10),
+        .banner-row>div:not(:last-child):nth-of-type(10) {
+            flex: 0 0 100px
+        }
+
+        .last-header {
+            flex: 0 0 120px;
+            position: relative;
+            padding: 0;
+            text-transform: initial;
+            background-color: #c2c2c2;
+            font-weight: 400;
+            color: #4f4f4f;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer
+        }
+
+        .last-header:before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: -5px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 5px 6px 5px 0;
+            border-color: transparent #c2c2c2 transparent transparent
+        }
+
+        .last-header a {
+            margin: 0 auto
+        }
+
+        .banner-row .last-header a {
+            padding: 10px 20px
+        }
+
+        .icon-header {
+            width: 30px;
+            background-color: #d7d7d7;
+            align-self: stretch;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        iframe {
+            transition: .4s;
+            display: block
+        }
+
+        @media print {
+            .last-header {
+                opacity: 0
+            }
+
+            .header-in .logo {
+                width: 200px;
+                height: 75px;
+                -webkit-print-color-adjust: exact;
+                background-image: url('https://logospreview.s3.us-east-2.amazonaws.com/LogoAlternativa.png');
+                background-repeat: no-repeat;
+                background-size: contain
+            }
+
+            .header-in {
+                flex-direction: column
+            }
+
+            .header-in * {
+                color: black !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-in">
+            <div class="logo"></div>
+            
+        <div class="header-info">
+            <p><strong>Cliente:</strong> SECOM MG</p>
+            <p><strong>Agência:</strong> CALIX</p>
+            <p><strong>Campanha:</strong> TRILHAS DO FUTURO</p>
+            <p><strong>Data:</strong> 12/09/2025</p>
+        </div>
+    
+        </div>
+    </header>
+    
+        <section class="banner-info">
+            <p class="print-btn" onclick="prints();"></p>
+            <section>
+                <div class="banner-header">
+                    <div>Item</div>
+                    <div>linha criativa</div>
+                    <div>veículo</div>
+                    <div>dimensão</div>
+                    <div>peso</div>
+                    <div>tempo</div>
+                    <div>looping</div>
+                    <div>complexidade</div>
+                    <div>tipo</div>
+                    <div id="showAll" class="last-header"><a>Ver todos</a>
+                        <div class="icon-header"><img src="https://iconspreview.s3.us-east-2.amazonaws.com/eye.png" alt="olho"></div>
+                    </div>
+                </div>
+                
+        <div class="banner">
+            <div class="banner-row">
+                <div>1</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>490x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>1</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/1-Enfermeira-padrão-490x150-4MB-indeterminado-Sim-GIF-Desenvolvimento-/490x150.gif" width="490px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>2</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>970x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>2</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/2-Enfermeira-padrão-970x250-4MB-indeterminado-Sim-GIF-Desenvolvimento-/970x250.gif" width="970px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>3</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1000x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>3</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/3-Enfermeira-padrão-1000x150-4MB-indeterminado-Sim-GIF-Desenvolvimento-/1000x150.gif" width="1000px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>4</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1000x200</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>4</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/4-Enfermeira-padrao-1000x200-4MB-indeterminado-sim-GIF-Desenvolvimento-/1000x200.gif" width="1000px" height="200px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>5</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1025x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>5</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/5-Enfermeira-padrao-1025x150-4MB-indeterminado-sim-GIF-Desenvolvimento-/1025x150.gif" width="1025px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>6</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1080x120</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>6</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/6-Enfermeira-padrao-1080x120-4MB-indeterminado-sim-GIF-Desenvolvimento-/1080x120.gif" width="1080px" height="120px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>7</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1100x140</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>7</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/7-Enfermeira-padrao-1100x140-4MB-indeterminado-sim-GIF-Desenvolvimento-/1100x140.gif" width="1100px" height="140px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>8</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1119x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>8</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/8-Enfermeira-padrao-1119x250-4MB-indeterminado-sim-GIF-Desenvolvimento-/1119x250.gif" width="1119px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>9</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1132x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>9</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/9-Enfermeira-padrao-1132x250-4MB-indeterminado-sim-GIF-Desenvolvimento-/1132x250.gif" width="1132px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>10</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1145x200</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>10</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/10-Enfermeira-padrao-1145x200-4MB-indeterminado-sim-GIF-Desenvolvimento-/1145x200.gif" width="1145px" height="200px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>11</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1170x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>11</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/11-Enfermeira-padrao-1170x150-4MB-indeterminado-sim-GIF-Desenvolvimento-/1170x150.gif" width="1170px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>12</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1170x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>12</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/12-Enfermeira-padrao-1170x250-4MB-indeterminado-sim-GIF-Desenvolvimento-/1170x250.gif" width="1170px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>13</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1170x330</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>13</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/13-Enfermeira-padrao-1170x330-4MB-indeterminado-sim-GIF-Desenvolvimento-/1170x330.gif" width="1170px" height="330px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>14</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1200x300</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>14</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/14-Enfermeira-padrao-1200x300-4MB-indeterminado-sim-GIF-Desenvolvimento-/1200x300.gif" width="1200px" height="300px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>15</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1200x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>15</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/15-Enfermeira-padrao-1200x150-4MB-indeterminado-sim-GIF-Desenvolvimento-/1200x150.gif" width="1200px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>16</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1200x272</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>16</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/16-Enfermeira-padrao-1200x272-4MB-indeterminado-sim-GIF-Desenvolvimento-/1200x272.gif" width="1200px" height="272px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>17</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1260x260</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>17</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/17-Enfermeira-padrao-1260x260-4MB-indeterminado-sim-GIF-Desenvolvimento-/1260x260.gif" width="1260px" height="260px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>18</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1280x180</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>18</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/18-Enfermeira-padrao-1280x180-4MB-indeterminado-sim-GIF-Desenvolvimento-/1280x180.gif" width="1280px" height="180px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>19</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1320x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>19</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/19-Enfermeira-padrao-1320x250-4MB-indeterminado-sim-GIF-Desenvolvimento-/1320x250.gif" width="1320px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>20</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1500x230</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>20</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/20-Enfermeira-padrao-1500x230-4MB-indeterminado-sim-GIF-Desenvolvimento-/1500x230.gif" width="1500px" height="230px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>21</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1600x350</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>21</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/21-Enfermeira-padrao-1600x350-4MB-indeterminado-sim-GIF-Desenvolvimento-/1600x350.gif" width="1600px" height="350px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>22</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1900x400</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>22</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/22-Enfermeira-padrao-1900x400-4MB-indeterminado-sim-GIF-Desenvolvimento-/1900x400.gif" width="1900px" height="400px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>23</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>1950x350</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>23</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/23-Enfermeira-padrao-1950x350-4MB-indeterminado-sim-GIF-Desenvolvimento-/1950x350.gif" width="1950px" height="350px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>24</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>234x60</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>24</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/24-Enfermeira-padrao-234x60-4MB-indeterminado-sim-GIF-Desenvolvimento-/234x60.gif" width="234px" height="60px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>25</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>300x100</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>25</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/25-Enfermeira-padrao-300x100-4MB-indeterminado-sim-GIF-Desenvolvimento-/300x100.gif" width="300px" height="100px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>26</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>300x125</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>26</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/26-Enfermeira-padrao-300x125-4MB-indeterminado-sim-GIF-Desenvolvimento-/300x125.gif" width="300px" height="125px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>27</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>300x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>27</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/27-Enfermeira-padrao-300x150-4MB-indeterminado-sim-GIF-Desenvolvimento-/300x150.gif" width="300px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>28</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>300x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>28</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/28-Enfermeira-padrao-300x250-4MB-indeterminado-sim-GIF-Desenvolvimento-/300x250.gif" width="300px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>29</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>300x600</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>29</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/29-Enfermeira-padrao-300x600-4MB-indeterminado-sim-GIF-Desenvolvimento-/300x600.gif" width="300px" height="600px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>30</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>320x100</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>30</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/30-Enfermeira-padrao-320x100-4MB-indeterminado-sim-GIF-Desenvolvimento-/320x100.gif" width="320px" height="100px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>31</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>320x50</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>31</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/31-Enfermeira-padrao-320x50-4MB-indeterminado-sim-GIF-Desenvolvimento-/320x50.gif" width="320px" height="50px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>32</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>336x280</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>32</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/32-Enfermeira-padrao-336x280-4MB-indeterminado-sim-GIF-Desenvolvimento-/336x280.gif" width="336px" height="280px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>33</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>350x220</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>33</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/33-Enfermeira-padrao-350x220-4MB-indeterminado-sim-GIF-Desenvolvimento-/350x220.gif" width="350px" height="220px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>34</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>400x336</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>34</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/34-Enfermeira-padrao-400x336-4MB-indeterminado-sim-GIF-Desenvolvimento-/400x336.gif" width="400px" height="336px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>35</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>635x200</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>35</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/35-Enfermeira-padrao-635x200-4MB-indeterminado-sim-GIF-Desenvolvimento-/635x200.gif" width="635px" height="200px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>36</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>728x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>36</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/36-Enfermeira-padrao-728x90-4MB-indeterminado-sim-GIF-Desenvolvimento-/728x90.gif" width="728px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>37</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>750x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>37</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/37-Enfermeira-padrao-750x250-4MB-indeterminado-sim-GIF-Desenvolvimento-/750x250.gif" width="750px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>38</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>800x214</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>38</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/38-Enfermeira-padrao-800x214-4MB-indeterminado-sim-GIF-Desenvolvimento-/800x214.gif" width="800px" height="214px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>39</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>825x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>39</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/39-Enfermeira-padrao-825x90-4MB-indeterminado-sim-GIF-Desenvolvimento-/825x90.gif" width="825px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>40</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>865x120</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>40</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/40-Enfermeira-padrao-865x120-4MB-indeterminado-sim-GIF-Desenvolvimento-/865x120.gif" width="865px" height="120px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>41</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>920x120</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>41</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/41-Enfermeira-padrao-920x120-4MB-indeterminado-sim-GIF-Desenvolvimento-/920x120.gif" width="920px" height="120px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>42</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>920x238</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>42</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/42-Enfermeira-padrao-920x238-4MB-indeterminado-sim-GIF-Desenvolvimento-/920x238.gif" width="920px" height="238px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>43</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>920x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>43</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/43-Enfermeira-padrao-920x250-4MB-indeterminado-sim-GIF-Desenvolvimento-/920x250.gif" width="920px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>44</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>930x110</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>44</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/44-Enfermeira-padrao-930x110-4MB-indeterminado-sim-GIF-Desenvolvimento-/930x110.gif" width="930px" height="110px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>45</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>967x102</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>45</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/45-Enfermeira-padrao-967x102-4MB-indeterminado-sim-GIF-Desenvolvimento-/967x102.gif" width="967px" height="102px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>46</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>970x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>46</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/46-Enfermeira-padrao-970x150-4MB-indeterminado-sim-GIF-Desenvolvimento-/970x150.gif" width="970px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>47</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>970x180</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>47</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/47-Enfermeira-padrao-970x180-4MB-indeterminado-sim-GIF-Desenvolvimento-/970x180.gif" width="970px" height="180px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>48</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>970x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>48</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/48-Enfermeira-padrao-970x250-4MB-indeterminado-sim-GIF-Desenvolvimento-/970x250.gif" width="970px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>49</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>970x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>49</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/49-Enfermeira-padrao-970x90-4MB-indeterminado-sim-GIF-Desenvolvimento-/970x90.gif" width="970px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>50</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>980x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>50</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/50-Enfermeira-padrao-980x150-4MB-indeterminado-sim-GIF-Desenvolvimento-/980x150.gif" width="980px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>51</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>980x230</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>51</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/51-Enfermeira-padrao-980x230-4MB-indeterminado-sim-GIF-Desenvolvimento-/980x230.gif" width="980px" height="230px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>52</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>980x300</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>52</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/52-Enfermeira-padrao-980x300-4MB-indeterminado-sim-GIF-Desenvolvimento-/980x300.gif" width="980px" height="300px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>53</div>
+                <div>Enfermeira</div>
+                <div>CPM</div>
+                <div>993x164</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>53</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/53-Enfermeira-padrao-993x164-4MB-indeterminado-sim-GIF-Desenvolvimento-/993x164.gif" width="993px" height="164px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>54</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>490x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>54</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/54-Chef-padrao-490x150-4MB-indeterminado-sim-GIF-Desenvolvimento/490x150.gif" width="490px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>55</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>970x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>55</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/55-Chef-padrao-970x250-4MB-indeterminado-sim-GIF-Desenvolvimento/970x250.gif" width="970px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>56</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1000x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>56</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/56-Chef-padrao-1000x150-4MB-indeterminado-sim-GIF-Desenvolvimento/1000x150.gif" width="1000px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>57</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1000x200</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>57</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/57-Chef-padrao-1000x200-4MB-indeterminado-sim-GIF-Desenvolvimento/1000x200.gif" width="1000px" height="200px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>58</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1025x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>58</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/58-Chef-padrao-1025x150-4MB-indeterminado-sim-GIF-Desenvolvimento/1025x150.gif" width="1025px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>59</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1080x120</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>59</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/59-Chef-padrao-1080x120-4MB-indeterminado-sim-GIF-Desenvolvimento/1080x120.gif" width="1080px" height="120px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>60</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1100x140</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>60</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/60-Chef-padrao-1100x140-4MB-indeterminado-sim-GIF-Desenvolvimento/1100x140.gif" width="1100px" height="140px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>61</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1119x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>61</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/61-Chef-padrao-1119x250-4MB-indeterminado-sim-GIF-Desenvolvimento/1119x250.gif" width="1119px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>62</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1132x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>62</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/62-Chef-padrao-1132x250-4MB-indeterminado-sim-GIF-Desenvolvimento/1132x250.gif" width="1132px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>63</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1145x200</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>63</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/63-Chef-padrao-1145x200-4MB-indeterminado-sim-GIF-Desenvolvimento/1145x200.gif" width="1145px" height="200px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>64</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1170x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>64</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/64-Chef-padrao-1170x150-4MB-indeterminado-sim-GIF-Desenvolvimento/1170x150.gif" width="1170px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>65</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1170x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>65</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/65-Chef-padrao-1170x250-4MB-indeterminado-sim-GIF-Desenvolvimento/1170x250.gif" width="1170px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>66</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1170x330</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>66</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/66-Chef-padrao-1170x330-4MB-indeterminado-sim-GIF-Desenvolvimento/1170x330.gif" width="1170px" height="330px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>67</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1200x300</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>67</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/67-Chef-padrao-1200x300-4MB-indeterminado-sim-GIF-Desenvolvimento/1200x300.gif" width="1200px" height="300px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>68</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1200x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>68</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/68-Chef-padrao-1200x150-4MB-indeterminado-sim-GIF-Desenvolvimento/1200x150.gif" width="1200px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>69</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1200x272</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>69</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/69-Chef-padrao-1200x272-4MB-indeterminado-sim-GIF-Desenvolvimento/1200x272.gif" width="1200px" height="272px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>70</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1260x260</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>70</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/70-Chef-padrao-1260x260-4MB-indeterminado-sim-GIF-Desenvolvimento/1260x260.gif" width="1260px" height="260px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>71</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1280x180</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>71</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/71-Chef-padrao-1280x180-4MB-indeterminado-sim-GIF-Desenvolvimento/1280x180.gif" width="1280px" height="180px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>72</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1320x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>72</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/72-Chef-padrao-1320x250-4MB-indeterminado-sim-GIF-Desenvolvimento/1320x250.gif" width="1320px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>73</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1500x230</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>73</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/73-Chef-padrao-1500x230-4MB-indeterminado-sim-GIF-Desenvolvimento/1500x230.gif" width="1500px" height="230px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>74</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1600x350</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>74</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/74-Chef-padrao-1600x350-4MB-indeterminado-sim-GIF-Desenvolvimento/1600x350.gif" width="1600px" height="350px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>75</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1900x400</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>75</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/75-Chef-padrao-1900x400-4MB-indeterminado-sim-GIF-Desenvolvimento/1900x400.gif" width="1900px" height="400px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>76</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>1950x350</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>76</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/76-Chef-padrao-1950x350-4MB-indeterminado-sim-GIF-Desenvolvimento/1950x350.gif" width="1950px" height="350px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>77</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>234x60</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>77</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/77-Chef-padrao-234x60-4MB-indeterminado-sim-GIF-Desenvolvimento/234x60.gif" width="234px" height="60px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>78</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>300x100</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>78</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/78-Chef-padrao-300x100-4MB-indeterminado-sim-GIF-Desenvolvimento/300x100.gif" width="300px" height="100px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>79</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>300x125</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>79</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/79-Chef-padrao-300x125-4MB-indeterminado-sim-GIF-Desenvolvimento/300x125.gif" width="300px" height="125px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>80</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>300x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>80</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/80-Chef-padrao-300x150-4MB-indeterminado-sim-GIF-Desenvolvimento/300x150.gif" width="300px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>81</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>300x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>81</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/81-Chef-padrao-300x250-4MB-indeterminado-sim-GIF-Desenvolvimento/300x250.gif" width="300px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>82</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>300x600</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>82</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/82-Chef-padrao-300x600-4MB-indeterminado-sim-GIF-Desenvolvimento/300x600.gif" width="300px" height="600px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>83</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>320x100</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>83</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/84-Chef-padrao-320x100-4MB-indeterminado-sim-GIF-Desenvolvimento/320x100.gif" width="320px" height="100px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>84</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>320x50</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>84</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/85-Chef-padrao-320x50-4MB-indeterminado-sim-GIF-Desenvolvimento/320x50.gif" width="320px" height="50px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>85</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>336x280</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>85</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/86-Chef-padrao-336x280-4MB-indeterminado-sim-GIF-Desenvolvimento/336x280.gif" width="336px" height="280px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>86</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>350x220</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>86</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/87-Chef-padrao-350x220-4MB-indeterminado-sim-GIF-Desenvolvimento/350x220.gif" width="350px" height="220px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>87</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>400x336</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>87</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/88-Chef-padrao-400x336-4MB-indeterminado-sim-GIF-Desenvolvimento/400x336.gif" width="400px" height="336px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>88</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>635x200</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>88</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/89-Chef-padrao-635x200-4MB-indeterminado-sim-GIF-Desenvolvimento/635x200.gif" width="635px" height="200px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>89</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>728x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>89</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/90-Chef-padrao-728x90-4MB-indeterminado-sim-GIF-Desenvolvimento/728x90.gif" width="728px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>90</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>750x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>90</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/91-Chef-padrao-750x250-4MB-indeterminado-sim-GIF-Desenvolvimento/750x250.gif" width="750px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>91</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>800x214</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>91</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/92-Chef-padrao-800x214-4MB-indeterminado-sim-GIF-Desenvolvimento/800x214.gif" width="800px" height="214px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>92</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>825x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>92</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/93-Chef-padrao-825x90-4MB-indeterminado-sim-GIF-Desenvolvimento/825x90.gif" width="825px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>93</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>865x120</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>93</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/94-Chef-padrao-865x120-4MB-indeterminado-sim-GIF-Desenvolvimento/865x120.gif" width="865px" height="120px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>94</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>920x120</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>94</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/96-Chef-padrao-920x120-4MB-indeterminado-sim-GIF-Desenvolvimento/920x120.gif" width="920px" height="120px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>95</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>920x238</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>95</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/97-Chef-padrao-920x238-4MB-indeterminado-sim-GIF-Desenvolvimento/920x238.gif" width="920px" height="238px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>96</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>920x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>96</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/98-Chef-padrao-920x250-4MB-indeterminado-sim-GIF-Desenvolvimento/920x250.gif" width="920px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>97</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>930x110</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>97</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/99-Chef-padrao-930x110-4MB-indeterminado-sim-GIF-Desenvolvimento/930x110.gif" width="930px" height="110px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>98</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>967x102</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>98</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/100-Chef-padrao-967x102-4MB-indeterminado-sim-GIF-Desenvolvimento/967x102.gif" width="967px" height="102px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>99</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>970x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>99</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/101-Chef-padrao-970x150-4MB-indeterminado-sim-GIF-Desenvolvimento/970x150.gif" width="970px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>100</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>970x180</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>100</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/102-Chef-padrao-970x180-4MB-indeterminado-sim-GIF-Desenvolvimento/970x180.gif" width="970px" height="180px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>101</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>970x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>101</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/103-Chef-padrao-970x250-4MB-indeterminado-sim-GIF-Desenvolvimento/970x250.gif" width="970px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>102</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>970x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>102</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/104-Chef-padrao-970x90-4MB-indeterminado-sim-GIF-Desenvolvimento/970x90.gif" width="970px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>103</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>980x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>103</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/105-Chef-padrao-980x150-4MB-indeterminado-sim-GIF-Desenvolvimento/980x150.gif" width="980px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>104</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>980x230</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>104</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/106-Chef-padrao-980x230-4MB-indeterminado-sim-GIF-Desenvolvimento/980x230.gif" width="980px" height="230px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>105</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>980x300</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>105</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/108-Chef-padrao-980x300-4MB-indeterminado-sim-GIF-Desenvolvimento/980x300.gif" width="980px" height="300px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>106</div>
+                <div>Chef</div>
+                <div>CPM</div>
+                <div>993x164</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>106</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/109-Chef-padrao-993x164-4MB-indeterminado-sim-GIF-Desenvolvimento/993x164.gif" width="993px" height="164px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>107</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>490x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>107</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/110-TI-padrao-490x150-4MB-indeterminado-sim-GIF-Desenvolvimento/490x150.gif" width="490px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>108</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>970x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>108</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/111-TI-padrao-970x250-4MB-indeterminado-sim-GIF-Desenvolvimento/970x250.gif" width="970px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>109</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1000x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>109</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/112-TI-padrao-1000x150-4MB-indeterminado-sim-GIF-Desenvolvimento/1000x150.gif" width="1000px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>110</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1000x200</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>110</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/113-TI-padrao-1000x200-4MB-indeterminado-sim-GIF-Desenvolvimento/1000x200.gif" width="1000px" height="200px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>111</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1025x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>111</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/114-TI-padrao-1025x150-4MB-indeterminado-sim-GIF-Desenvolvimento/1025x150.gif" width="1025px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>112</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1080x120</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>112</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/115-TI-padrao-1080x120-4MB-indeterminado-sim-GIF-Desenvolvimento/1080x120.gif" width="1080px" height="120px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>113</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1100x140</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>113</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/116-TI-padrao-1100x140-4MB-indeterminado-sim-GIF-Desenvolvimento/1100x140.gif" width="1100px" height="140px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>114</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1119x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>114</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/117-TI-padrao-1119x250-4MB-indeterminado-sim-GIF-Desenvolvimento/1119x250.gif" width="1119px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>115</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1132x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>115</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/118-TI-padrao-1132x250-4MB-indeterminado-sim-GIF-Desenvolvimento/1132x250.gif" width="1132px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>116</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1145x200</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>116</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/119-TI-padrao-1145x200-4MB-indeterminado-sim-GIF-Desenvolvimento/1145x200.gif" width="1145px" height="200px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>117</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1170x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>117</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/120-TI-padrao-1170x150-4MB-indeterminado-sim-GIF-Desenvolvimento/1170x150.gif" width="1170px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>118</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1170x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>118</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/121-TI-padrao-1170x250-4MB-indeterminado-sim-GIF-Desenvolvimento/1170x250.gif" width="1170px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>119</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1170x330</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>119</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/122-TI-padrao-1170x330-4MB-indeterminado-sim-GIF-Desenvolvimento/1170x330.gif" width="1170px" height="330px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>120</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1200x300</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>120</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/123-TI-padrao-1200x300-4MB-indeterminado-sim-GIF-Desenvolvimento/1200x300.gif" width="1200px" height="300px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>121</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1200x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>121</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/124-TI-padrao-1200x150-4MB-indeterminado-sim-GIF-Desenvolvimento/1200x150.gif" width="1200px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>122</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1200x272</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>122</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/125-TI-padrao-1200x272-4MB-indeterminado-sim-GIF-Desenvolvimento/1200x272.gif" width="1200px" height="272px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>123</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1260x260</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>123</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/126-TI-padrao-1260x260-4MB-indeterminado-sim-GIF-Desenvolvimento/1260x260.gif" width="1260px" height="260px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>124</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1280x180</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>124</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/127-TI-padrao-1280x180-4MB-indeterminado-sim-GIF-Desenvolvimento/1280x180.gif" width="1280px" height="180px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>125</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1320x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>125</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/128-TI-padrao-1320x250-4MB-indeterminado-sim-GIF-Desenvolvimento/1320x250.gif" width="1320px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>126</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1500x230</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>126</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/129-TI-padrao-1500x230-4MB-indeterminado-sim-GIF-Desenvolvimento/1500x230.gif" width="1500px" height="230px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>127</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1600x350</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>127</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/130-TI-padrao-1600x350-4MB-indeterminado-sim-GIF-Desenvolvimento/1600x350.gif" width="1600px" height="350px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>128</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1900x400</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>128</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/131-TI-padrao-1900x400-4MB-indeterminado-sim-GIF-Desenvolvimento/1900x400.gif" width="1900px" height="400px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>129</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>1950x350</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>129</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/132-TI-padrao-1950x350-4MB-indeterminado-sim-GIF-Desenvolvimento/1950x350.gif" width="1950px" height="350px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>130</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>234x60</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>130</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/133-TI-padrao-234x60-4MB-indeterminado-sim-GIF-Desenvolvimento/234x60.gif" width="234px" height="60px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>131</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>300x100</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>131</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/134-TI-padrao-300x100-4MB-indeterminado-sim-GIF-Desenvolvimento/300x100.gif" width="300px" height="100px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>132</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>300x125</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>132</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/135-TI-padrao-300x125-4MB-indeterminado-sim-GIF-Desenvolvimento/300x125.gif" width="300px" height="125px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>133</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>300x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>133</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/136-TI-padrao-300x150-4MB-indeterminado-sim-GIF-Desenvolvimento/300x150.gif" width="300px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>134</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>300x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>134</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/137-TI-padrao-300x250-4MB-indeterminado-sim-GIF-Desenvolvimento/300x250.gif" width="300px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>135</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>300x600</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>135</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/138-TI-padrao-300x600-4MB-indeterminado-sim-GIF-Desenvolvimento/300x600.gif" width="300px" height="600px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>136</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>320x100</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>136</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/139-TI-padrao-320x100-4MB-indeterminado-sim-GIF-Desenvolvimento/320x100.gif" width="320px" height="100px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>137</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>320x50</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>137</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/140-TI-padrao-320x50-4MB-indeterminado-sim-GIF-Desenvolvimento/320x50.gif" width="320px" height="50px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>138</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>336x280</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>138</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/141-TI-padrao-336x280-4MB-indeterminado-sim-GIF-Desenvolvimento/336x280.gif" width="336px" height="280px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>139</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>350x220</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>139</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/142-TI-padrao-350x220-4MB-indeterminado-sim-GIF-Desenvolvimento/350x220.gif" width="350px" height="220px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>140</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>400x336</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>140</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/143-TI-padrao-400x336-4MB-indeterminado-sim-GIF-Desenvolvimento/400x336.gif" width="400px" height="336px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>141</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>635x200</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>141</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/144-TI-padrao-635x200-4MB-indeterminado-sim-GIF-Desenvolvimento/635x200.gif" width="635px" height="200px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>142</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>728x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>142</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/145-TI-padrao-728x90-4MB-indeterminado-sim-GIF-Desenvolvimento/728x90.gif" width="728px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>143</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>750x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>143</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/146-TI-padrao-750x250-4MB-indeterminado-sim-GIF-Desenvolvimento/750x250.gif" width="750px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>144</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>800x214</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>144</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/147-TI-padrao-800x214-4MB-indeterminado-sim-GIF-Desenvolvimento/800x214.gif" width="800px" height="214px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>145</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>825x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>145</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/148-TI-padrao-825x90-4MB-indeterminado-sim-GIF-Desenvolvimento/825x90.gif" width="825px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>146</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>865x120</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>146</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/149-TI-padrao-865x120-4MB-indeterminado-sim-GIF-Desenvolvimento/865x120.gif" width="865px" height="120px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>147</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>920x120</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>147</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/150-TI-padrao-920x120-4MB-indeterminado-sim-GIF-Desenvolvimento/920x120.gif" width="920px" height="120px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>148</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>920x238</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>148</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/151-TI-padrao-920x238-4MB-indeterminado-sim-GIF-Desenvolvimento/920x238.gif" width="920px" height="238px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>149</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>920x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>149</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/152-TI-padrao-920x250-4MB-indeterminado-sim-GIF-Desenvolvimento/920x250.gif" width="920px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>150</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>930x110</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>150</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/153-TI-padrao-930x110-4MB-indeterminado-sim-GIF-Desenvolvimento/930x110.gif" width="930px" height="110px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>151</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>967x102</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>151</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/154-TI-padrao-967x102-4MB-indeterminado-sim-GIF-Desenvolvimento/967x102.gif" width="967px" height="102px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>152</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>970x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>152</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/155-TI-padrao-970x150-4MB-indeterminado-sim-GIF-Desenvolvimento/970x150.gif" width="970px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>153</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>970x180</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>153</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/156-TI-padrao-970x180-4MB-indeterminado-sim-GIF-Desenvolvimento/970x180.gif" width="970px" height="180px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>154</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>970x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>154</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/157-TI-padrao-970x250-4MB-indeterminado-sim-GIF-Desenvolvimento/970x250.gif" width="970px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>155</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>970x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>155</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/158-TI-padrao-970x90-4MB-indeterminado-sim-GIF-Desenvolvimento/970x90.gif" width="970px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>156</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>980x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>156</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/159-TI-padrao-980x150-4MB-indeterminado-sim-GIF-Desenvolvimento/980x150.gif" width="980px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>157</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>980x230</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>157</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/160-TI-padrao-980x230-4MB-indeterminado-sim-GIF-Desenvolvimento/980x230.gif" width="980px" height="230px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>158</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>980x300</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>158</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/161-TI-padrao-980x300-4MB-indeterminado-sim-GIF-Desenvolvimento/980x300.gif" width="980px" height="300px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>159</div>
+                <div>TI</div>
+                <div>CPM</div>
+                <div>993x164</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>gif</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>159</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/162-TI-padrao-993x164-4MB-indeterminado-sim-GIF-Desenvolvimento/993x164.gif" width="993px" height="164px" frameborder="0"></iframe>
+        </div>
+    
+            </section>
+        </section>
+    
+    <script type="application/javascript">
+        var btnShow = document.getElementById('showAll');
+        var iframes = document.getElementsByTagName('iframe');
+        var cacheStyle = [];
+        var isOpen;
+        var singleOpen;
+
+        var iconEye = 'https://iconspreview.s3.us-east-2.amazonaws.com/eye.png';
+
+        var iconRefresh = 'https://iconspreview.s3.us-east-2.amazonaws.com/refresh.png';
+
+        for (var x = 0; x < iframes.length; x++) {
+            var cacheProps = {
+                width: iframes[x].width,
+                height: iframes[x].height
+            };
+            console.log(iframes[x].width)
+            cacheStyle.push(cacheProps);
+        }
+
+
+        function toggleIframe(style) {
+            var btn = document.querySelectorAll('.banner-row > .last-header');
+            if (!isOpen) {
+                for (var x in style) {
+                    iframes[x].style.height = 0;
+                    btn[x].firstChild.innerText = 'Visualizar';
+                    btn[x].lastElementChild.firstElementChild.src = iconEye;
+                    singleOpen = false;
+                }
+                return isOpen = true;
+            }
+            if (isOpen) {
+                for (var x in style) {
+                    iframes[x].style.height = style[x].height;
+                    iframes[x].src = iframes[x].src;
+                }
+                return isOpen = false;
+            }
+        }
+
+        toggleIframe(cacheStyle);
+
+        btnShow.addEventListener('click', function () {
+            return toggleIframe(cacheStyle);
+        })
+
+        function viewBanner(elem) {
+            var buttons = document.querySelectorAll('.banner-row > .last-header');
+
+            for (var x in cacheStyle) {
+                iframes[x].style.height = 0;
+                buttons[x].firstChild.innerText = 'Visualizar';
+                buttons[x].lastElementChild.firstElementChild.src = iconEye;
+            }
+
+            if (!singleOpen) {
+                elem.parentElement.parentElement.nextElementSibling.src = elem.parentElement.parentElement.nextElementSibling.src;
+                elem.parentElement.parentElement.nextElementSibling.style.height = elem.parentElement.parentElement.nextElementSibling.height;
+                elem.innerText = 'Fechar';
+                elem.nextElementSibling.firstElementChild.src = iconRefresh;
+                return singleOpen = true;
+            } else {
+                elem.parentElement.parentElement.nextElementSibling.style.height = 0;
+                elem.firstChild.innerText = 'Visualizar';
+                elem.nextElementSibling.firstElementChild.src = iconEye;
+                return singleOpen = false;
+            }
+        }
+
+        function refreshBanner(elem) {
+            elem.parentElement.parentElement.nextElementSibling.src = elem.parentElement.parentElement.nextElementSibling.src;
+        }
+
+        function prints() {
+            var style = cacheStyle;
+            for (var x in style) {
+                iframes[x].style.height = style[x].height;
+                iframes[x].src = iframes[x].src;
+            }
+            setTimeout(window.print(), 2000);
+        }
+    </script>
+</body>
+
+</html>
