@@ -102,7 +102,7 @@ var animations = [
     },
       {
         id: '#i09',
-        duration: 650,
+        duration: 850,
         delayBefore: 450,
         delayAfter: 0,
         easing: 'easeOutCubic',
@@ -110,7 +110,7 @@ var animations = [
     },
     {
         id: '#i10',
-        duration: 650,
+        duration: 850,
         delayBefore: 550,
         delayAfter: 3000,
         easing: 'easeOutCubic',
