@@ -1,0 +1,39 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#banner {
+  position: relative;
+  width: 360px;
+  height: 640px;
+  overflow: hidden;
+  background: black;
+}
+#i01 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+#i02 {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  opacity: 0;
+}
+#i03 {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  opacity: 0;
+}
+
+#i04 {
+  position: absolute;
+  left: 0;
+  top: -100%;
+  opacity: 0;
+}
