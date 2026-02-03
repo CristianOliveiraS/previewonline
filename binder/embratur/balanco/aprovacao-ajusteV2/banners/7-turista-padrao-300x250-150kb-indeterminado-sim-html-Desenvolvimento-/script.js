@@ -29,7 +29,7 @@ var animations = [
     {
       id: '#i02',
       duration: 650,
-      delayBefore: 250,
+      delayBefore: 0,
       delayAfter: 4000,
       easing: "easeOutCubic",
       animations: {opacity:1, top:0, left:0}
@@ -47,7 +47,7 @@ var animations = [
     {
       id: '#i03',
       duration: 650,
-      delayBefore: 250,
+      delayBefore: 0,
       delayAfter: 4000,
       easing: "easeOutCubic",
       animations: {opacity:1, top:0, left:0}
