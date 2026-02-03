@@ -20,36 +20,36 @@ var animations = [
   [
      {
       id: '#i01',
-      duration: 650,
+      duration: 850,
       delayBefore: 0,
       delayAfter: 0,
-      easing: "easeOutCubic",
+      easing: "easeInOutCubic",
       animations: {opacity:1, top:"-100%", left:0}
     },   
     {
       id: '#i02',
-      duration: 650,
+      duration: 850,
       delayBefore: 0,
       delayAfter: 4000,
-      easing: "easeOutCubic",
+      easing: "easeInOutCubic",
       animations: {opacity:1, top:0, left:0}
     },
   ],
   [
        {
       id: '#i02',
-      duration: 650,
+      duration: 850,
       delayBefore: 0,
       delayAfter: 0,
-      easing: "easeOutCubic",
+      easing: "easeInOutCubic",
       animations: {opacity:1, top:"-100%", left:0}
     },   
     {
       id: '#i03',
-      duration: 650,
+      duration: 850,
       delayBefore: 0,
       delayAfter: 4000,
-      easing: "easeOutCubic",
+      easing: "easeInOutCubic",
       animations: {opacity:1, top:0, left:0}
     },  
   ],
