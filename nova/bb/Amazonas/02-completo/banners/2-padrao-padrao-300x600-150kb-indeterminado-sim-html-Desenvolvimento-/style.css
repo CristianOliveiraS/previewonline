@@ -9,7 +9,7 @@ body {
   width: 300px;
   height: 600px;
   overflow: hidden;
-  background: #dadada;
+  background: #fcfc30;
 }
 #i01 {
   position: absolute;
@@ -19,9 +19,9 @@ body {
 }
 #i02 {
   position: absolute;
-  left: 50%;
+  left: 0;
   top: 0;
-  opacity: 0;
+  opacity: 1;
 }
 #i03 {
   position: absolute;

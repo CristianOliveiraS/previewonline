@@ -10,16 +10,16 @@ var animations = [
     },
     {
       id: '#i02',
-      duration: 650,
+      duration: 950,
       delayBefore: 350,
       delayAfter: 0,
       easing: "easeOutCubic",
-      animations: {opacity:1, top:0, left:0}
+      animations: {opacity:1, top:0, left:"-342px"}
     },
     {
       id: '#i03',
       duration: 650,
-      delayBefore: 450,
+      delayBefore: 650,
       delayAfter: 0,
       easing: "easeOutCubic",
       animations: {opacity:1, top:0, left:0}
@@ -27,7 +27,7 @@ var animations = [
     {
       id: '#i04',
       duration: 650,
-      delayBefore: 650,
+      delayBefore: 850,
       delayAfter: 0,
       easing: "easeOutCubic",
       animations: {opacity:1, top:0, left:0}
@@ -35,7 +35,7 @@ var animations = [
     {
       id: '#i04',
       duration: 450,
-      delayBefore: 650,
+      delayBefore: 850,
       delayAfter: 0,
       easing: "easeOutCubic",
       animations: {opacity:1, scale:[1.02],top:0, left:0}
@@ -43,7 +43,7 @@ var animations = [
     {
       id: '#i04',
       duration: 450,
-      delayBefore: 650,
+      delayBefore: 850,
       delayAfter: 2800,
       easing: "easeOutCubic",
       animations: {opacity:1,scale:[1],top:0, left:0}
@@ -51,7 +51,7 @@ var animations = [
     {
       id: '#i05',
       duration: 650,
-      delayBefore: 750,
+      delayBefore: 950,
       delayAfter: 0,
       easing: "easeOutCubic",
       animations: {opacity:1, top:0, left:0}
@@ -59,7 +59,7 @@ var animations = [
     {
       id: '#i05',
       duration: 450,
-      delayBefore: 750,
+      delayBefore: 950,
       delayAfter: 0,
       easing: "easeOutCubic",
       animations: {opacity:1, scale:[1.02],top:0, left:0}
@@ -67,7 +67,7 @@ var animations = [
     {
       id: '#i05',
       duration: 450,
-      delayBefore: 750,
+      delayBefore: 950,
       delayAfter: 0,
       easing: "easeOutCubic",
       animations: {opacity:1,scale:[1],top:0}
@@ -75,7 +75,7 @@ var animations = [
     {
       id: '#i06',
       duration: 650,
-      delayBefore: 850,
+      delayBefore: 1050,
       delayAfter: 0,
       easing: "easeOutCubic",
       animations: {opacity:1, top:0, left:0}
@@ -83,7 +83,7 @@ var animations = [
     {
       id: '#i06',
       duration: 450,
-      delayBefore: 850,
+      delayBefore: 1050,
       delayAfter: 0,
       easing: "easeOutCubic",
       animations: {opacity:1, scale:[1.02],top:0, left:0}
@@ -91,7 +91,7 @@ var animations = [
     {
       id: '#i06',
       duration: 450,
-      delayBefore: 850,
+      delayBefore: 1050,
       delayAfter: 3400,
       easing: "easeOutCubic",
       animations: {opacity:1,scale:[1],top:0}
@@ -99,7 +99,7 @@ var animations = [
     {
       id: '#i07',
       duration: 650,
-      delayBefore: 950,
+      delayBefore: 1150,
       delayAfter: 0,
       easing: "easeOutCubic",
       animations: {opacity:1, top:0, left:0}
@@ -107,7 +107,7 @@ var animations = [
     {
       id: '#i07',
       duration: 450,
-      delayBefore: 950,
+      delayBefore: 1150,
       delayAfter: 0,
       easing: "easeOutCubic",
       animations: {opacity:1, scale:[1.02],top:0, left:0}
@@ -115,7 +115,7 @@ var animations = [
     {
       id: '#i07',
       duration: 450,
-      delayBefore: 950,
+      delayBefore: 1150,
       delayAfter: 3400,
       easing: "easeOutCubic",
       animations: {opacity:1,scale:[1],top:0}
