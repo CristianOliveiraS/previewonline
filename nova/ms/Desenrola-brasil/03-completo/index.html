@@ -1,0 +1,2061 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Banners HTML - Comprovante</title>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            font-family: arial, sans-serif
+        }
+
+        html {
+            background-color: #ececec
+        }
+
+        body {
+            display: block;
+            margin: 0 auto;
+            background-color: #fff;
+            min-height: 100vh
+        }
+
+        header {
+            background: rgb(0, 183, 255);
+            background: linear-gradient(90deg, rgb(0, 183, 255) 0%, rgb(1, 5, 255) 100%);
+            border-bottom: 3px solid rgb(0, 183, 255);
+            padding: 1.5em;
+        }
+
+        .header-in {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .header-in .logo {
+            flex: none;
+            background-image: url('https://logospreview.s3.us-east-2.amazonaws.com/lOGOPREVIEW.png');
+            height: 40px;
+            width: 160px
+        }
+
+        .header-info {
+            text-transform: uppercase
+        }
+
+        .header-info p {
+            display: inline;
+            margin: 0 1em;
+            color: white;
+            font-size: .75em
+        }
+
+        .header-info p:last-child {
+            margin: 0
+        }
+
+        .banner-info {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: block
+        }
+
+        .print-btn {
+            font-size: .7em;
+            text-transform: uppercase;
+            margin: 1.5em 0 1.5em auto;
+            width: 180px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end
+        }
+
+        .print-btn img {
+            margin-left: .5em
+        }
+
+        .banner-header,
+        .banner-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            background-color: #898989;
+            text-transform: uppercase;
+            color: white;
+            font-weight: bold;
+            font-size: .7em;
+            word-break: keep-all;
+            word-wrap: break-word
+        }
+
+        .banner-row {
+            background-color: #fff;
+            color: #404041;
+            text-transform: capitalize
+        }
+
+        .banner-row {
+            margin-top: 1em
+        }
+
+        .banner:nth-of-type(odd) .banner-row {
+            background-color: #f5f5f5
+        }
+
+        .banner-header>div:not(:last-child),
+        .banner-row>div:not(:last-child) {
+            padding: 1em 0;
+            flex: 0 0 91px
+        }
+
+        .banner-header>div:not(:last-child),
+        .banner-row>div:not(:last-child) {
+            margin-right: .5em
+        }
+
+        .banner-header>div:first-child,
+        .banner-row>div:first-child {
+            padding-left: 1em
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(1),
+        .banner-row>div:not(:last-child):nth-of-type(1) {
+            flex: 0 0 30px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(2),
+        .banner-row>div:not(:last-child):nth-of-type(2) {
+            flex: 0 0 120px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(3),
+        .banner-row>div:not(:last-child):nth-of-type(3) {
+            flex: 0 0 90px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(4),
+        .banner-row>div:not(:last-child):nth-of-type(4) {
+            flex: 0 0 90px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(5),
+        .banner-row>div:not(:last-child):nth-of-type(5) {
+            flex: 0 0 70px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(6),
+        .banner-row>div:not(:last-child):nth-of-type(6) {
+            flex: 0 0 40px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(7),
+        .banner-row>div:not(:last-child):nth-of-type(7) {
+            flex: 0 0 40px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(8),
+        .banner-row>div:not(:last-child):nth-of-type(8) {
+            flex: 0 0 90px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(9),
+        .banner-row>div:not(:last-child):nth-of-type(9) {
+            flex: 0 0 95px
+        }
+
+        .banner-header>div:not(:last-child):nth-of-type(10),
+        .banner-row>div:not(:last-child):nth-of-type(10) {
+            flex: 0 0 100px
+        }
+
+        .last-header {
+            flex: 0 0 120px;
+            position: relative;
+            padding: 0;
+            text-transform: initial;
+            background-color: #c2c2c2;
+            font-weight: 400;
+            color: #4f4f4f;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer
+        }
+
+        .last-header:before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: -5px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 5px 6px 5px 0;
+            border-color: transparent #c2c2c2 transparent transparent
+        }
+
+        .last-header a {
+            margin: 0 auto
+        }
+
+        .banner-row .last-header a {
+            padding: 10px 20px
+        }
+
+        .icon-header {
+            width: 30px;
+            background-color: #d7d7d7;
+            align-self: stretch;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        iframe {
+            transition: .4s;
+            display: block
+        }
+
+        @media print {
+            .last-header {
+                opacity: 0
+            }
+
+            .header-in .logo {
+                width: 200px;
+                height: 75px;
+                -webkit-print-color-adjust: exact;
+                background-image: url('https://logospreview.s3.us-east-2.amazonaws.com/LogoAlternativa.png');
+                background-repeat: no-repeat;
+                background-size: contain
+            }
+
+            .header-in {
+                flex-direction: column
+            }
+
+            .header-in * {
+                color: black !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-in">
+            <div class="logo"></div>
+            
+        <div class="header-info">
+            <p><strong>Cliente:</strong> MINISTERIO DA SAÚDE</p>
+            <p><strong>Agência:</strong> NOVA S.A</p>
+            <p><strong>Campanha:</strong> DESENROLA BRASIL</p>
+            <p><strong>Data:</strong> 22/05/2026</p>
+        </div>
+    
+        </div>
+    </header>
+    
+        <section class="banner-info">
+            <p class="print-btn" onclick="prints();"></p>
+            <section>
+                <div class="banner-header">
+                    <div>Item</div>
+                    <div>linha criativa</div>
+                    <div>veículo</div>
+                    <div>dimensão</div>
+                    <div>peso</div>
+                    <div>tempo</div>
+                    <div>looping</div>
+                    <div>complexidade</div>
+                    <div>tipo</div>
+                    <div id="showAll" class="last-header"><a>Ver todos</a>
+                        <div class="icon-header"><img src="https://iconspreview.s3.us-east-2.amazonaws.com/eye.png" alt="olho"></div>
+                    </div>
+                </div>
+                
+        <div class="banner">
+            <div class="banner-row">
+                <div>1</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>970x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>1</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/1-MULHER-padrao-970x250-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="970px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>2</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>300x600</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>2</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/2-MULHER-padrao-300x600-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="300px" height="600px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>3</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>300x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>3</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/3-MULHER-padrao-300x250-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="300px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>4</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>400x300</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>4</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/4-MULHER-padrao-400x300-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="400px" height="300px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>5</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>728x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>5</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/5-MULHER-padrao-728x90-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="728px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>6</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>1190x330</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>6</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/6-MULHER-padrao-1190x330-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1190px" height="330px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>7</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>336x450</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>7</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/7-MULHER-padrao-336x450-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="336px" height="450px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>8</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>300x450</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>8</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/8-MULHER-padrao-300x450-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="300px" height="450px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>9</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>970x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>9</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/9-MULHER-padrao-970x90-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="970px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>10</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>160x600</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>10</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/10-MULHER-padrao-160x600-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="160px" height="600px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>11</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>300x300</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>11</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/11-MULHER-padrao-300x300-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="300px" height="300px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>12</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>1029x771</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>12</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/12-MULHER-padrao-1029x771-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1029px" height="771px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>13</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>900x420</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>13</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/13-MULHER-padrao-900x420-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="900px" height="420px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>14</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>300x1050</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>14</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/14-MULHER-padrao-300x1050-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="300px" height="1050px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>15</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>120x600</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>15</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/15-MULHER-padrao-120x600-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="120px" height="600px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>16</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>336x280</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>16</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/16-MULHER-padrao-336x280-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="336px" height="280px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>17</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>970x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>17</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/17-MULHER-padrao-970x150-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="970px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>18</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>1920x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>18</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/18-MULHER-padrao-1920x150-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1920px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>19</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>350x152</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>19</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/19-MULHER-padrao-350x152-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="350px" height="152px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>20</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>600x600</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>20</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/20-MULHER-padrao-600x600-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="600px" height="600px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>21</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>540x540</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>21</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/21-MULHER-padrao-540x540-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="540px" height="540px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>22</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>405x540</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>22</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/22-MULHER-padrao-405x540-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="405px" height="540px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>23</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>640x640</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>23</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/23-MULHER-padrao-640x640-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="640px" height="640px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>24</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>343x193</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>24</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/24-MULHER-padrao-343x193-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="343px" height="193px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>25</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>1920x1080</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>25</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/25-MULHER-padrao-1920x1080-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1920px" height="1080px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>26</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>1080x1080</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>26</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/26-MULHER-padrao-1080x1080-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1080px" height="1080px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>27</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>768x432</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>27</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/27-MULHER-padrao-768x432-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="768px" height="432px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>28</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>468x60</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>28</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/28-MULHER-padrao-468x60-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="468px" height="60px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>29</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>505x72</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>29</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/29-MULHER-padrao-505x72-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="505px" height="72px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>30</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>1170x282</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>30</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/30-MULHER-padrao-1170x282-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1170px" height="282px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>31</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>780x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>31</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/31-MULHER-padrao-780x90-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="780px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>32</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>281x281</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>32</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/32-MULHER-padrao-281x281-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="281px" height="281px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>33</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>720x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>33</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/33-MULHER-padrao-720x90-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="720px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>34</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>730x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>34</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/34-MULHER-padrao-730x90-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="730px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>35</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>720x180</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>35</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/35-MULHER-padrao-720x180-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="720px" height="180px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>36</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>1100x110</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>36</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/36-MULHER-padrao-1100x110-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1100px" height="110px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>37</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>300x100</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>37</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/37-MULHER-padrao-300x100-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="300px" height="100px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>38</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>1190x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>38</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/38-MULHER-padrao-1190x250-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1190px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>39</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>600x100</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>39</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/39-MULHER-padrao-600x100-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="600px" height="100px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>40</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>1000x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>40</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/40-MULHER-padrao-1000x150-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1000px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>41</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>1200x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>41</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/41-MULHER-padrao-1200x150-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1200px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>42</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>728x91</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>42</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/42-MULHER-padrao-728x91-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="728px" height="91px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>43</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>1100x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>43</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/43-MULHER-padrao-1100x250-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1100px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>44</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>1175x190</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>44</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/44-MULHER-padrao-1175x190-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1175px" height="190px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>45</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>960x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>45</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/45-MULHER-padrao-960x150-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="960px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>46</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>300x400</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>46</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/46-MULHER-padrao-300x400-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="300px" height="400px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>47</div>
+                <div>MULHER</div>
+                <div>a definir</div>
+                <div>975x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>47</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/47-MULHER-padrao-975x90-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="975px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>48</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>970x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>48</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/48-Casal-padrao-970x250-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="970px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>49</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>300x600</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>49</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/49-Casal-padrao-300x600-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="300px" height="600px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>50</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>300x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>50</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/50-Casal-padrao-300x250-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="300px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>51</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>400x300</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>51</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/51-Casal-padrao-400x300-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="400px" height="300px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>52</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>728x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>52</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/52-Casal-padrao-728x90-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="728px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>53</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>1190x330</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>53</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/53-Casal-padrao-1190x330-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1190px" height="330px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>54</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>336x450</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>54</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/54-Casal-padrao-336x450-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="336px" height="450px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>55</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>300x450</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>55</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/55-Casal-padrao-300x450-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="300px" height="450px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>56</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>970x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>56</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/56-Casal-padrao-970x90-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="970px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>57</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>160x600</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>57</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/57-Casal-padrao-160x600-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="160px" height="600px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>58</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>300x300</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>58</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/58-Casal-padrao-300x300-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="300px" height="300px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>59</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>1029x771</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>59</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/59-Casal-padrao-1029x771-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1029px" height="771px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>60</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>900x420</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>60</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/60-Casal-padrao-900x420-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="900px" height="420px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>61</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>300x1050</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>61</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/61-Casal-padrao-300x1050-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="300px" height="1050px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>62</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>120x600</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>62</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/62-Casal-padrao-120x600-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="120px" height="600px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>63</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>336x280</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>63</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/63-Casal-padrao-336x280-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="336px" height="280px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>64</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>970x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>64</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/64-Casal-padrao-970x150-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="970px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>65</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>1920x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>65</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/65-Casal-padrao-1920x150-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1920px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>66</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>350x152</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>66</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/66-Casal-padrao-350x152-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="350px" height="152px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>67</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>600x600</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>67</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/67-Casal-padrao-600x600-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="600px" height="600px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>68</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>540x540</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>68</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/68-Casal-padrao-540x540-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="540px" height="540px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>69</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>405x540</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>69</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/69-Casal-padrao-405x540-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="405px" height="540px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>70</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>640x640</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>70</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/70-Casal-padrao-640x640-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="640px" height="640px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>71</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>343x193</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>71</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/71-Casal-padrao-343x193-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="343px" height="193px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>72</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>1920x1080</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>72</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/72-Casal-padrao-1920x1080-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1920px" height="1080px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>73</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>1080x1080</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>73</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/73-Casal-padrao-1080x1080-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1080px" height="1080px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>74</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>768x432</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>74</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/74-Casal-padrao-768x432-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="768px" height="432px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>75</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>468x60</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>75</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/75-Casal-padrao-468x60-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="468px" height="60px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>76</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>505x72</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>76</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/75-Casal-padrao-505x72-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="505px" height="72px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>77</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>1170x282</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>77</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/76-Casal-padrao-1170x282-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1170px" height="282px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>78</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>780x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>78</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/77-Casal-padrao-780x90-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="780px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>79</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>281x281</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>79</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/78-Casal-padrao-281x281-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="281px" height="281px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>80</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>720x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>80</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/79-Casal-padrao-720x90-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="720px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>81</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>730x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>81</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/80-Casal-padrao-730x90-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="730px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>82</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>720x180</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>82</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/81-Casal-padrao-720x180-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="720px" height="180px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>83</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>1100x110</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>83</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/82-Casal-padrao-1100x110-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1100px" height="110px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>84</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>300x100</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>84</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/83-Casal-padrao-300x100-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="300px" height="100px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>85</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>1190x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>85</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/84-Casal-padrao-1190x250-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1190px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>86</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>600x100</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>86</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/85-Casal-padrao-600x100-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="600px" height="100px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>87</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>1000x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>87</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/86-Casal-padrao-1000x150-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1000px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>88</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>1200x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>88</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/87-Casal-padrao-1200x150-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1200px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>89</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>728x91</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>89</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/88-Casal-padrao-728x91-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="728px" height="91px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>90</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>1100x250</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>90</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/89-Casal-padrao-1100x250-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1100px" height="250px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>91</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>1175x190</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>91</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/90-Casal-padrao-1175x190-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="1175px" height="190px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>92</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>960x150</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>92</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/91-Casal-padrao-960x150-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="960px" height="150px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>93</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>300x400</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>93</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/92-Casal-padrao-300x400-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="300px" height="400px" frameborder="0"></iframe>
+        </div>
+    
+        <div class="banner">
+            <div class="banner-row">
+                <div>94</div>
+                <div>Casal</div>
+                <div>a definir</div>
+                <div>975x90</div>
+                <div>150kb</div>
+                <div>15seg</div>
+                <div>sim</div>
+                <div>html</div>
+                <div>desenvolvimento</div>
+                <div class="last-header"><a onclick="viewBanner(this);">Visualizar</a>
+                    <div class="icon-header" onclick="refreshBanner(this)"><span><strong>94</strong></span></div>
+                </div>
+            </div>
+            <iframe src="banners/93-Casal-padrao-975x90-150kb-indeterminado-sim-html-Desenvolvimento-/index.html" width="975px" height="90px" frameborder="0"></iframe>
+        </div>
+    
+            </section>
+        </section>
+    
+    <script type="application/javascript">
+        var btnShow = document.getElementById('showAll');
+        var iframes = document.getElementsByTagName('iframe');
+        var cacheStyle = [];
+        var isOpen;
+        var singleOpen;
+
+        var iconEye = 'https://iconspreview.s3.us-east-2.amazonaws.com/eye.png';
+
+        var iconRefresh = 'https://iconspreview.s3.us-east-2.amazonaws.com/refresh.png';
+
+        for (var x = 0; x < iframes.length; x++) {
+            var cacheProps = {
+                width: iframes[x].width,
+                height: iframes[x].height
+            };
+            console.log(iframes[x].width)
+            cacheStyle.push(cacheProps);
+        }
+
+
+        function toggleIframe(style) {
+            var btn = document.querySelectorAll('.banner-row > .last-header');
+            if (!isOpen) {
+                for (var x in style) {
+                    iframes[x].style.height = 0;
+                    btn[x].firstChild.innerText = 'Visualizar';
+                    btn[x].lastElementChild.firstElementChild.src = iconEye;
+                    singleOpen = false;
+                }
+                return isOpen = true;
+            }
+            if (isOpen) {
+                for (var x in style) {
+                    iframes[x].style.height = style[x].height;
+                    iframes[x].src = iframes[x].src;
+                }
+                return isOpen = false;
+            }
+        }
+
+        toggleIframe(cacheStyle);
+
+        btnShow.addEventListener('click', function () {
+            return toggleIframe(cacheStyle);
+        })
+
+        function viewBanner(elem) {
+            var buttons = document.querySelectorAll('.banner-row > .last-header');
+
+            for (var x in cacheStyle) {
+                iframes[x].style.height = 0;
+                buttons[x].firstChild.innerText = 'Visualizar';
+                buttons[x].lastElementChild.firstElementChild.src = iconEye;
+            }
+
+            if (!singleOpen) {
+                elem.parentElement.parentElement.nextElementSibling.src = elem.parentElement.parentElement.nextElementSibling.src;
+                elem.parentElement.parentElement.nextElementSibling.style.height = elem.parentElement.parentElement.nextElementSibling.height;
+                elem.innerText = 'Fechar';
+                elem.nextElementSibling.firstElementChild.src = iconRefresh;
+                return singleOpen = true;
+            } else {
+                elem.parentElement.parentElement.nextElementSibling.style.height = 0;
+                elem.firstChild.innerText = 'Visualizar';
+                elem.nextElementSibling.firstElementChild.src = iconEye;
+                return singleOpen = false;
+            }
+        }
+
+        function refreshBanner(elem) {
+            elem.parentElement.parentElement.nextElementSibling.src = elem.parentElement.parentElement.nextElementSibling.src;
+        }
+
+        function prints() {
+            var style = cacheStyle;
+            for (var x in style) {
+                iframes[x].style.height = style[x].height;
+                iframes[x].src = iframes[x].src;
+            }
+            setTimeout(window.print(), 2000);
+        }
+    </script>
+</body>
+
+</html>
