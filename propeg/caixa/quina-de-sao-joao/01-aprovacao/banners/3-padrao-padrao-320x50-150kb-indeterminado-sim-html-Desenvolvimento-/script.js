@@ -112,7 +112,7 @@ var animations = [
       delayBefore: 850,
       delayAfter: 0,
       easing: "easeOutBack",
-      animations: { opacity: 1, top: 0, left: 0, scale: [5, 1] },
+      animations: { opacity: 1, top: 0, left: 0, scale: [5.18, 1] },
     },
     {
       id: "#i13-1",
